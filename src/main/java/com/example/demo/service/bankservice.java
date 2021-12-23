@@ -36,14 +36,11 @@ public class bankservice {
 
 	public List<bank> getallbanks(int pageno, int pagesize, String sortorder) 
 	{
-		//Pageable pageable=PageRequest.of(pageno, pagesize,sortorder.equals("asc") ? Sort.by("name").ascending():Sort.by("name").descending());
-      //Page<bank> banklist= bankrepository.findAll(pageable);
-		//return banklist.toList();
+	    Pageable pageable=PageRequest.of(pageno, pagesize,sortorder.equals("asc") ? Sort.by("name").ascending():Sort.by("name").descending());
+        Page<bank> banklist= bankrepository.findAll(pageable);
+		return banklist.toList();
 		
 		
-		List<bank> banklist=bankrepository.findAll();
-		banklist.forEach(bank->bank.setName("hii"+bank.getName()));
-		return banklist;
 		
 	}
 	
