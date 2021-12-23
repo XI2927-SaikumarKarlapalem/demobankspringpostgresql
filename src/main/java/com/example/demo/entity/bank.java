@@ -27,12 +27,12 @@ public class bank {
 	private String location;
 	
 	
-//	@OneToOne(cascade=CascadeType.ALL)
-//	@JoinColumn(name="customer_id")
-//	private customer customer;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="customer_id")
+	private customer customer;
 	
-//	@ManyToOne(cascade=CascadeType.ALL)
-//	@JoinColumn(name="section_id")
-//	private section section;
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="section_id")
+	private section section;
 
 }

@@ -40,6 +40,7 @@ public class bankcontroller {
 		return ResponseEntity.status(HttpStatus.CREATED).body(m1);
 		
 	}
+	
 	@GetMapping("/bank/{pageno}/{pagesize}/{order}")
 	public List<bank> getallbanks(@PathVariable("pageno") int pageno,@PathVariable("pagesize") int pagesize,@PathVariable("order")String sortorder)
 	{
@@ -48,10 +49,10 @@ public class bankcontroller {
 	}
 	
 	//@GetMapping("/bank")
-//	public List<bank>getallbanks()
+	//public List<bank>getallbanks()
 	//{
-		//List<bank>banklist=bankservice.getallbanks();
-		//return banklist;
+	//	List<bank>banklist=bankservice.getallbanks();
+	//	return banklist;
 	//}
 	@GetMapping("/bank/{id}")
 	public ResponseEntity <bank> geteachbank(@PathVariable("id") int id)
@@ -109,16 +110,5 @@ public class bankcontroller {
 		String message=bankservice.deletebank(id);
 		return message;
 	}
-	@GetMapping("add/{no1}/{no2}")
-	public int add(@PathVariable int no1,@PathVariable int no2)
-	{
-		int c=bankservice.add(no1, no2);
-		return c;
-	}
-	@GetMapping("mul/{no1}/{no2}")
-	public int mul(@PathVariable int no1,@PathVariable int no2)
-	{
-		int c=bankservice.mul(no1, no2);
-		return c;
-	}
+	
 }
